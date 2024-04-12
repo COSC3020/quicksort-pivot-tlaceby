@@ -33,7 +33,7 @@ If the array is *randomly* ordered picking a **good** pivot position means picki
 
 With the median-of-three method, the pivot is chosen by considering the **first**, **middle**, and **last** elements. This should reduce the chance of picking an extreme value as the pivot compared to just selecting the first element.
 
-To pick a **bad** pivot would mean at least two out of the three elements must be either smallest or largest values. There are $3*2*1$ or $3!$ permutations of three elements. The probability of picking a **bad** one is where 2 of them are *extreme* values. Therefore $1- 4/6 = 1- 2/3$ is the probability of selecting a bad pivot using this method. 
+To pick a **bad** pivot would mean at least two out of the three elements must be either smallest or largest values. There are $3 \times 2 \times 1$ or $3! = 6$ permutations of three elements. The probability of picking a **bad** one is where 2 of them are *extreme* values. Therefore $1- 4/6 = 1- 2/3$ is the probability of selecting a bad pivot using this method. 
 
 Conversely this means the probability of selecting the good pivot position is $1 - 1/3 = 2/3 = 0.66$.
 
