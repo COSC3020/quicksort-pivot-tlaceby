@@ -20,3 +20,23 @@ quantitatively reason with them.
 Add your answer to this markdown file. [This
 page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
 might help with the notation for mathematical expressions.
+
+
+## Analysis
+
+**Selecting First Method**
+
+If the array is *randomly* ordered picking a **good** pivot position means picking one that divides the array roughly in half. The probability of the first element being the **good** choice is $1/n$. This is the case since foreach element in the array we have only one chance of picking it being the optimial one.
+​
+
+**Median-of-Three Method**
+
+With the median-of-three method, the pivot is chosen by considering the **first**, **middle**, and **last** elements. This should reduce the chance of picking an extreme value as the pivot compared to just selecting the first element.
+
+To pick a **bad** pivot would mean at least two out of the three elements must be either smallest or largest values. There are $3*2*1$ or $3!$ permutations of three elements. The probability of picking a **bad** one is where 2 of them are *extreme* values. Therefore $1- 4/6 = 1- 2/3$ is the probability of selecting a bad pivot using this method. 
+
+Conversely this means the probability of selecting the good pivot position is $1 - 1/3 = 2/3 = 0.66$.
+
+**Conclusion**
+
+We can see that the probability of selecting a **good** pivot is greater with the **Median-of-Three Method** compared to just selecting the **first-index** as the pivot.
