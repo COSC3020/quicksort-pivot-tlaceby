@@ -1,4 +1,5 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/IF3rQO50)
+
 # Quicksort Pivots
 
 in the lectures I only briefly mentioned strategies for determining a good pivot
@@ -17,26 +18,68 @@ equally likely, i.e. the input array is ordered randomly.
 Your answer must derive probabilities for choosing a good pivot and
 quantitatively reason with them.
 
-Add your answer to this markdown file. [This
-page](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/writing-mathematical-expressions)
-might help with the notation for mathematical expressions.
-
-
 ## Analysis
 
-**Selecting First Method**
+### Given Info
 
-If the array is *randomly* ordered picking a **good** pivot position means picking one that divides the array roughly in half. The probability of the first element being the **good** choice is $1/n$. This is the case since foreach element in the array we have only one chance of picking it being the optimial one.
-​
+From the slide in **01-sorting.pdf pg34** we know that the probability of selecting a random element which is a **good** pivot is simply $1/2 = 0.5$. We also know that the probability of selecting a random pivot which is **large** is $1/4 = 0.25$ and the same is true for **small** pivot being selected.
 
-**Median-of-Three Method**
+| Method                                     | Probability              |
+| ------------------------------------------ | ------------------------ |
+| Probability of selecting a **good** pivot  | $ P(G) = \frac12 = 0.50$ |
+| Probability of selecting a **small** pivot | $ P(S) = \frac14 = 0.25$ |
+| Probability of selecting a **large** pivot | $ P(L) = \frac14 = 0.25$ |
 
-With the median-of-three method, the pivot is chosen by considering the **first**, **middle**, and **last** elements. This should reduce the chance of picking an extreme value as the pivot compared to just selecting the first element.
+### Leftmost Selection
 
-To pick a **bad** pivot would mean at least two out of the three elements must be either smallest or largest values. There are $3 \times 2 \times 1$ or $3! = 6$ permutations of three elements. The probability of picking a **bad** one is where 2 of them are *extreme* values. Therefore $1- 4/6 = 1- 2/3$ is the probability of selecting a bad pivot using this method. 
+The probability of selecting a **good** pivot point is given as $P(G) = 0.5 = 50$%. This is the probability of selecting the leftmost pivot and it being good aswell.
 
-Conversely this means the probability of selecting the good pivot position is $1 - 1/3 = 2/3 = 0.66$.
+### Median-Of-Three Selection
 
-**Conclusion**
+The **median-of-three** requires us to select 3 specific pivot positions in the array we are considering. This means we will always select the **first**, **middle**, and **last** index as the possible pivot positions. We then select the median value between the three as the new pivot position.
 
-We can see that the probability of selecting a **good** pivot is greater with the **Median-of-Three Method** compared to just selecting the **first-index** as the pivot.
+To analize the probability let's consider all the possible outcomes of ordering these 3 pivot combinations.
+
+1. We can have an ordering of _all_ **good** orderings. There is only one way to do this.
+
+   $G \times G \times G$
+
+1. We can have an ordering of _mostly_ **good** with a single _small_ or _large_. There are a total of 6 possible orderings for this.
+
+   $S \times G \times G$
+
+   $G \times S \times G$
+
+   $G \times G \times S$
+
+   $L \times G \times G$
+
+   $G \times L \times G$
+
+   $G \times G \times L$
+
+1. Lastly there is the case where there exists only one ordering with a single **good** pivot position. The rest are either **small** or **large**. There exist 6 ways to generate these orderings.
+
+   $G \times S \times L$
+
+   $G \times L \times S$
+
+   $S \times L \times G$
+
+   $S \times G \times L$
+
+   $L \times S \times G$
+
+   $L \times G \times S$
+
+Therefore the probability of selecting a good pivot position is the sum of the three cases:
+
+$P(G) = P(Case1) + P(Case2) + P(Case3)$
+
+$P(G) = 1(\frac12)(\frac12)(\frac12) + 6(\frac12)(\frac14)(\frac12) + 6(\frac14)(\frac12)(\frac14)$
+
+$P(G) = 0.125 + 0.375 + 0.1875$
+
+$P(G) = 0.6875 = 68.75$%
+
+Therefore we can conclude that between the methods **median-of-three** and **first-element**, on average the best choice for selecting a pivot point is by using **median-of-three**.
