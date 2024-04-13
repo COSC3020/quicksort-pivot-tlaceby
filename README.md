@@ -24,11 +24,11 @@ quantitatively reason with them.
 
 From the slide in **01-sorting.pdf pg34** we know that the probability of selecting a random element which is a **good** pivot is simply $1/2 = 0.5$. We also know that the probability of selecting a random pivot which is **large** is $1/4 = 0.25$ and the same is true for **small** pivot being selected.
 
-| Method                                     | Probability              |
-| ------------------------------------------ | ------------------------ |
-| Probability of selecting a **good** pivot  | $ P(G) = \frac12 = 0.50$ |
-| Probability of selecting a **small** pivot | $ P(S) = \frac14 = 0.25$ |
-| Probability of selecting a **large** pivot | $ P(L) = \frac14 = 0.25$ |
+| Method                                     | Probability       |
+| ------------------------------------------ | ----------------- |
+| Probability of selecting a **good** pivot  | P(G) = 1/2 = 0.50 |
+| Probability of selecting a **small** pivot | P(S) = 1/4 = 0.25 |
+| Probability of selecting a **large** pivot | P(L) = 1/4 = 0.25 |
 
 ### Leftmost Selection
 
@@ -84,10 +84,10 @@ $P(G) = 0.6875 = 68.75$%
 
 ### Conclusion
 
-| Method                  | Probability      |
-| ----------------------- | ---------------- |
-| Selecting First Element | $ P(G) = 50.00$% |
-| Using Median-Of-Three   | $ P(G) = 68.75$% |
+| Method                  | Probability   |
+| ----------------------- | ------------- |
+| Selecting First Element | P(G) = 50.00% |
+| Using Median-Of-Three   | P(G) = 68.75% |
 
 Above is the summarized table for the probability of selecting a **good** pivot using the two diferent methods analized above. As we can tell the probability is greater when using the **median-of-three** method.
 Therefore, we can conclude that between both methods, on average the best choice for selecting a pivot point is by using **median-of-three**.
