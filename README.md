@@ -82,4 +82,12 @@ $P(G) = 0.125 + 0.375 + 0.1875$
 
 $P(G) = 0.6875 = 68.75$%
 
-Therefore we can conclude that between the methods **median-of-three** and **first-element**, on average the best choice for selecting a pivot point is by using **median-of-three**.
+### Conclusion
+
+| Method                  | Probability      |
+| ----------------------- | ---------------- |
+| Selecting First Element | $ P(G) = 50.00$% |
+| Using Median-Of-Three   | $ P(G) = 68.75$% |
+
+Above is the summarized table for the probability of selecting a **good** pivot using the two diferent methods analized above. As we can tell the probability is greater when using the **median-of-three** method.
+Therefore, we can conclude that between both methods, on average the best choice for selecting a pivot point is by using **median-of-three**.
